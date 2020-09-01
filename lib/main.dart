@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'NineTree_De',
+      title: 'NineTree_Dev',
       theme: ThemeData(
         // This is the theme of your application.
         //
