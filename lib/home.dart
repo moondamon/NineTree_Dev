@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:moondamon/MyPageView.dart';
+import 'package:moondamon/MyStack.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -45,10 +47,10 @@ class _HomePageState extends State<HomePage> {
             height: widthScreen * 0.5,
             // color: Colors.red,
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.only(left: 20),
               scrollDirection: Axis.horizontal,
               children: [
-                for (var i = 0; i < 5; i++)
+                for (var i = 0; i < 4; i++)
                   Container(
                       width: widthScreen * 0.325 + 20,
                       // height: widthScreen * 0.325,
@@ -100,61 +102,8 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               width: widthScreen * 0.9,
               height: widthScreen * 1.05,
-              child: Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(widthScreen * 0.08),
-                    child: Image.asset(
-                      'assets/PotPlant.jpg',
-                      fit: BoxFit.fitWidth,
-                      width: widthScreen * 0.9,
-                    ),
-                  ),
-                  Container(
-                    width: widthScreen * 0.9,
-                    height: widthScreen * 1.05,
-                    padding: EdgeInsets.all(widthScreen * 0.05),
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Opacity(
-                        opacity: 0.85,
-                        child: Container(
-                          width: widthScreen * 0.9,
-                          height: widthScreen * 0.4,
-                          padding: EdgeInsets.symmetric(
-                            vertical: widthScreen * 0.075,
-                            horizontal: widthScreen * 0.05,
-                          ),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.circular(widthScreen * 0.05)),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Indoor Plants',
-                                style: TextStyle(
-                                  fontSize: widthScreen * 0.07,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: widthScreen * 0.02,
-                              ),
-                              Text(
-                                'description',
-                                style: TextStyle(
-                                  fontSize: widthScreen * 0.04,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  )
-                ],
+              child: MyPageView(
+                index: _currentIndex,
               ),
             ),
           )
