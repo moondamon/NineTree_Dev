@@ -6,7 +6,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int index = 0;
+  int _currentIndex = 0;
+  List<Image> pic = [
+    Image.asset(
+      'assets/cactus.jpg',
+      width: 150,
+      height: 120,
+      fit: BoxFit.fitWidth,
+    ),
+    Image.asset(
+      'assets/succulent.jpg',
+      width: 150,
+      height: 120,
+      fit: BoxFit.fitWidth,
+    ),
+    Image.asset(
+      'assets/cactus.jpg',
+      width: 150,
+      height: 120,
+      fit: BoxFit.fitWidth,
+    ),
+    Image.asset(
+      'assets/succulent.jpg',
+      width: 150,
+      height: 120,
+      fit: BoxFit.fitWidth,
+    )
+  ];
   @override
   Widget build(BuildContext context) {
     double widthScreen = MediaQuery.of(context).size.width;
@@ -46,15 +72,22 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.all(15),
                     width: widthScreen * 0.4,
                     child: RawMaterialButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      fillColor: index == i ? Colors.pink : Colors.yellow,
-                      onPressed: () {
-                        setState(() {
-                          index = i;
-                        });
-                      },
-                    ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        fillColor:
+                            _currentIndex == i ? Colors.black : Colors.white,
+                        onPressed: () {
+                          setState(() {
+                            _currentIndex = i;
+                          });
+                        },
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: pic[i]),
+                          ],
+                        )),
                   ),
               ],
             ),
@@ -62,59 +95,161 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 20,
           ),
-          //cactus
           Container(
             width: widthScreen * 1,
             height: 450,
             child: ListView(
               children: [
                 Container(
-                  padding: EdgeInsets.all(15),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Image.asset(
-                      'assets/tree.jpg',
-                      height: 150,
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
-                ),
+                    padding: EdgeInsets.all(15),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            'assets/gymno.jpg',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Gymno',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: widthScreen * 0.08,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )),
                 Container(
-                  padding: EdgeInsets.all(15),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Image.asset(
-                      'assets/tree.jpg',
-                      width: widthScreen * 0.5,
-                      height: 150,
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
-                ),
+                    padding: EdgeInsets.all(15),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            'assets/mammillaria.jpg',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Gymno',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: widthScreen * 0.08,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )),
                 Container(
-                  padding: EdgeInsets.all(15),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Image.asset(
-                      'assets/tree.jpg',
-                      width: widthScreen * 0.5,
-                      height: 150,
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
-                ),
+                    padding: EdgeInsets.all(15),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            'assets/2.jpg',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Gymno',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: widthScreen * 0.08,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )),
                 Container(
-                  padding: EdgeInsets.all(15),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Image.asset(
-                      'assets/tree.jpg',
-                      width: widthScreen * 0.5,
-                      height: 150,
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
-                ),
+                    padding: EdgeInsets.all(15),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            'assets/ichinop.jpg',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Gymno',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: widthScreen * 0.08,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )),
+                Container(
+                    padding: EdgeInsets.all(15),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            'assets/bird.jpg',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Gymno',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: widthScreen * 0.08,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )),
+                Container(
+                    padding: EdgeInsets.all(15),
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            'assets/Parodia werneri.jpg',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Gymno',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: widthScreen * 0.08,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )),
               ],
             ),
           ),
